@@ -3,6 +3,7 @@ package org.example.streamAPI;
 import java.util.Arrays;
 import java.util.List;
 import java.util.OptionalDouble;
+import java.util.stream.Collectors;
 
 public class Exercises {
     public static void main(String[] args) {
@@ -43,6 +44,9 @@ public class Exercises {
     }
 
     //Отсортировать список строк в алфавитном порядке.
+    public static List<String> alphabetSort(List<String> list){
+        return list.stream().sorted().collect(Collectors.toList());
+    }
     //Найти максимальное значение в списке чисел.
     //Преобразовать список строк в список их длин.
     //Отфильтровать список объектов по определенному условию и получить только определенное количество элементов.
