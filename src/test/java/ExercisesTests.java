@@ -25,4 +25,11 @@ public class ExercisesTests {
 
         assertEquals(list,sortedList);
     }
+    //Найти максимальное значение в списке чисел.
+    @Test
+    public void findMaxTest(){
+        List<Integer> list = Arrays.asList(1,2,3,85,20,57,70,9);
+
+        assertEquals(Exercises.findMax(list),85);
+    }
 }
