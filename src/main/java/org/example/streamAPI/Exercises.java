@@ -1,7 +1,7 @@
 package org.example.streamAPI;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
@@ -38,11 +38,17 @@ public class Exercises {
     public static int findMax(List<Integer> list){
         return list.stream().max(Integer::compareTo).get();
     }
+
     //Преобразовать список строк в список их длин.
-    //Отфильтровать список объектов по определенному условию и получить только определенное количество элементов.
+    public static List<Integer> fromListToCountList(List<String> list){
+        return list.stream().map(String::length).toList();
+    }
+
     //Проверить, содержит ли список хотя бы один элемент, удовлетворяющий определенному условию.
-    //Группировать объекты списка по определенному критерию.
-    //Найти сумму квадратов всех чисел в списке.
+    public static boolean isInList(List<Integer> list, int condition){
+        Integer val = list.stream().filter(e -> e == condition).findAny().orElse(null);
+        return val != null;
+    }
 
 }
 
